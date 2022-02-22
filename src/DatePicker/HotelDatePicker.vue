@@ -61,7 +61,7 @@
             }"
             type="button"
           >
-            {{ `${checkIn ? dateFormater(checkIn) : i18n['check-in']}` }}
+            {{ `${checkIn ? formatDate(checkIn) : i18n['check-in']}` }}
           </div>
           <div
             class="vhd__datepicker__input"
@@ -71,7 +71,7 @@
             }"
             type="button"
           >
-            {{ `${checkOut ? dateFormater(checkOut) : i18n['check-out']}` }}
+            {{ `${checkOut ? formatDate(checkOut) : i18n['check-out']}` }}
           </div>
         </div>
       </div>
@@ -694,9 +694,10 @@ export default {
       ) {
         this.createMonth(new Date(this.startDate))
         const count = this.getMonthDiff(this.startDate, this.checkIn)
+        const monthCount = this.showSingleMonth ? count - 1 : count
         let nextMonth = new Date(this.startDate)
 
-        for (let i = 0; i <= count; i++) {
+        for (let i = 0; i <= monthCount; i++) {
           const tempNextMonth = this.getNextMonth(nextMonth)
 
           this.createMonth(tempNextMonth)
