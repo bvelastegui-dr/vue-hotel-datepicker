@@ -729,7 +729,7 @@ $extra-small-screen: '(max-width: 23em)';
     border-radius: $tooltip-border-radius;
     color: $primary-text-inverse-color;
     font-size: $tooltip-font-size;
-    padding: 0, 45em 0, 91em;
+    padding: 0 45em 0 91em;
     position: absolute;
     z-index: 50;
     left: 50%;
@@ -845,7 +845,7 @@ $extra-small-screen: '(max-width: 23em)';
     }
 
     &.vhd__checkInCheckOut {
-      width: calc(50% - 1.1875);
+      width: calc(50% - 1.1875em);
     }
   }
 }
